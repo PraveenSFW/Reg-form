@@ -1,0 +1,31 @@
+.bg{
+    background-color: aliceblue;
+}
+
+.form{
+    margin-top: 50px;
+}
+
+.card{
+    width: 800px;
+    float: right;
+    background-color: rgb(175, 120, 226);
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  label {
+    margin-right: 80px;     
+  }
+
+  .required{
+    color: red;
+  }
+  
+
+
+  
+

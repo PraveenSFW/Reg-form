@@ -7,91 +7,134 @@
                         <mat-card class="card">
                             <mat-card-content>
                                 <form class="regForm" [formGroup]="regForm">
-                                    <div class="form-container">
-                                        <label><span class="required">*</span> Company Name</label>
+                                    <div class="row form-container">
+                                        <div class="col-4 text">
+                                        <label><span class="required">*</span> Company Name :</label>
+                                    </div>
+                                        <div class="col-4">
                                         <mat-form-field>
                                             <input matInput #input formControlName="companyName" required>
                                         </mat-form-field>
                                     </div>
+                                    </div>
 
-                                    <div class="form-container">
-                                        <label for=""><span class="required">*</span> First Name</label>
+                                    <div class="row form-container">
+                                        <div class="col-4 text">
+                                        <label for=""><span class="required">*</span> First Name :</label>
+                                    </div>
+                                        <div class="col-4">
                                         <mat-form-field>
                                             <input matInput #input formControlName="firstName">
                                         </mat-form-field>
                                     </div>
+                                    </div>
 
 
-                                    <div class="form-container">
-                                        <label><span class="required">*</span> Last Name</label>
+                                    <div class="row form-container">
+                                        <div class="col-4 text">
+                                        <label><span class="required">*</span> Last Name :</label>
+                                    </div>
+                                        <div class="col-4">
                                         <mat-form-field>
                                             <input matInput #input formControlName="lastName">
                                         </mat-form-field>
                                     </div>
+                                    </div>
 
-                                    <div class="form-container">
-                                        <label><span class="required">*</span> Enter your email</label>
+                                    <div class="row form-container">
+                                        <div class="col-4 text">
+                                        <label><span class="required">*</span> Email Address :</label>
+                                    </div>
+                                        <div class="col-4">
                                         <mat-form-field>
                                             <input matInput formControlName="email">
                                         </mat-form-field>
                                     </div>
-
-
-                                    <div class="form-container">
-                                        <label> <span class="required">*</span> Title</label>
-                                        <mat-form-field>
-                                            <input matInput #input maxlength="30" minlength="5">
-                                        </mat-form-field>
                                     </div>
 
-                                    <div class="form-container">
-                                        <label> <span class="required">*</span> Phone</label>
+
+                                    <div class="row form-container">
+                                        <div class="col-4 text">
+                                        <label> <span class="required">*</span> Title :</label>
+                                    </div>
+                                        <div class="col-4">
                                         <mat-form-field>
-                                            <input matInput #input>
+                                            <input matInput #input maxlength="30" minlength="5" formControlName="title">
                                         </mat-form-field>
                                     </div>
+                                    </div>
 
+                                    <div class="row form-container">
+                                        <div class="col-4 text">
+                                        <label> <span class="required">*</span> Phone :</label>
+                                    </div>
+                                        <div class="col-4">
+                                        <mat-form-field>
+                                            <input matInput #input formControlName="phone">
+                                        </mat-form-field>
+                                    </div>
+                                    </div>
+
+                                    <div class="row form-container">
+                                    <div class="col-5">
                                     <section class="example-section">
-                                        <mat-checkbox class="example-margin" labelPosition="before"
-                                            formControlName="cancelRegistration">Cancel Registration</mat-checkbox>
+                                        <mat-checkbox class="example-margin text" labelPosition="before"
+                                            formControlName="cancelRegistration">Cancel Registration :</mat-checkbox>
                                     </section>
+                                </div>
 
-                                    <div class="form-container">
-                                        <label><span class="required">*</span> Training Session</label>
+                            </div>
+
+                                    <div class="row form-container">
+                                        <div class="col-4 text">
+                                        <label><span class="required">*</span> Training Session :</label>
+                                    </div>
+                                        <div class="col-4">
                                         <mat-form-field>
-                                            <mat-select>
+                                            <mat-select formControlName="trainingDate">
                                                 <mat-option *ngFor="let date of trainingDate"
                                                     [value]="date.value">{{date.viewValue}}</mat-option>
                                             </mat-select>
                                         </mat-form-field>
                                     </div>
+                                    </div>
 
-                                    <div class="form-container">
-                                    <label id="example-radio-group-label"><span class="required">*</span> Pick your favorite season</label>
-                                    <mat-radio-group aria-labelledby="example-radio-group-label"
-                                        class="example-radio-group" [(ngModel)]="favoriteSeason">
-                                        @for (season of seasons; track season) {
+                                    <div class="row form-container">
+                                        <div class="col-4 text">
+                                    <label id="example-radio-group-label"><span class="required">*</span> Job Function :</label>
+                                </div>
+                                    <div class="col-4">
+                                    <mat-radio-group aria-labelledby="example-radio-group-label" formControlName="jobFunction"
+                                        class="example-radio-group" [(ngModel)]="jobFunction">
+                                        @for (function of jobFunctions; track function) {
                                         <mat-radio-button class="example-radio-button"
-                                            [value]="season">{{season}}</mat-radio-button>
+                                            [value]="function">{{function}}</mat-radio-button>
                                         }
                                     </mat-radio-group>
                                 </div>
+                                </div>
 
-                                    <div class="form-container">
-                                        <label>Dietary Requirements</label>
+                                    <div class="row form-container">
+                                        <div class="col-4 text">
+                                        <label class="d-label">Dietary Requirements:</label>
+                                    </div>
+                                        <div class="col-4">
                                         <mat-form-field>
-                                            <input matInput #input maxlength="30" minlength="5">
+                                            <input matInput #input maxlength="30" minlength="5" formControlName="dieatryRequirement">
                                         </mat-form-field>
                                     </div>
+                                    </div>
 
-                                    <div class="form-container">
-                                        <label for="">Excepectations? </label>
+                                    <div class="row form-container">
+                                        <div class="col-4 text">
+                                        <label for="">Excepectations? :</label>
+                                    </div>
+                                        <div class="col-4">
                                         <mat-form-field class="example-full-width">
-                                            <textarea matInput></textarea>
+                                            <textarea matInput formControlName="excepectations"></textarea>
                                         </mat-form-field>
                                     </div>
-
-
+                                    </div>
 
                                 </form>
                             </mat-card-content>

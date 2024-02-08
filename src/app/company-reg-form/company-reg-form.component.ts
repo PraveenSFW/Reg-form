@@ -16,6 +16,8 @@ interface Training {
 })
 export class CompanyRegFormComponent implements OnInit {
   regForm!: FormGroup;
+  jobFunction!: string;
+
 
   constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
@@ -67,6 +69,22 @@ export class CompanyRegFormComponent implements OnInit {
         '',
         Validators.required,
       ],
+      trainingDate: [
+        '',
+        Validators.required,
+      ],
+      jobFunction: [
+        '',
+        Validators.required,
+      ],
+      dieatryRequirement: [
+        '',
+        Validators.required,
+      ],
+      excepectations:[
+        '',
+        Validators.required
+      ]
     });
   }
 
@@ -76,6 +94,5 @@ export class CompanyRegFormComponent implements OnInit {
     {value: 'd-1', viewValue: '09/02/2023'},
   ];
 
-  favoriteSeason!: string;
-  seasons: string[] = ['Campaign Management', 'CRM Adminitration', 'Email Deployment', 'Partner', 'Employee'];
+  jobFunctions: string[] = ['Campaign Management', 'CRM Adminitration', 'Email Deployment', 'Partner', 'Employee'];
 }

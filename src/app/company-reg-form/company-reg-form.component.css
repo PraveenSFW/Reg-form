@@ -1,5 +1,5 @@
 .bg{
-    background-color: aliceblue;
+    background-color: rgb(227, 155, 244);
 }
 
 .form{
@@ -9,7 +9,7 @@
 .card{
     width: 800px;
     float: right;
-    background-color: rgb(175, 120, 226);
+    background-color: rgb(238, 221, 251);
 }
 
 .form-container {
@@ -25,7 +25,21 @@
     color: red;
   }
   
+  textarea{
+    height: 80%;
+    width: 100%;
+  }
 
+  .text{
+    font-size: 16px;
+    color: black;
+  }
 
   
+  mat-radio-group{
+    display: grid;
+  }
 
+  .d-label{
+    display: contents;
+  }

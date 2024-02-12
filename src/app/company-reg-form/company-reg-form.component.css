@@ -25,10 +25,7 @@
     color: red;
   }
   
-  textarea{
-    height: 80%;
-    width: 100%;
-  }
+ 
 
   .text{
     font-size: 16px;
@@ -42,4 +39,45 @@
 
   .d-label{
     display: contents;
+  }
+
+  .red{
+    color: red;
+  }
+
+  mat-error{
+    font-size: 14px;
+  }
+
+  .job{
+    margin-bottom:148px;
+  }
+
+ 
+  .cancel-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .label-text {
+    margin-left: 10px;
+  }
+  
+  .head{
+    text-align: center;
+    height: 50px;
+    color: black;
+    padding: 8px;
+  }
+
+  .foot{
+    color: black;
+    margin-left: 15px;
+  }
+
+  .btn-c{
+    display: flex;
+    justify-content: center;
+
   }

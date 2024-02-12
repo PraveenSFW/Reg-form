@@ -22,69 +22,24 @@ export class CompanyRegFormComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
     this.regForm = this.fb.group({
-      companyName: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(50),
-        ],
-      ],
-      firstName: [
-        '',
+      companyName: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [
+          
         Validators.required,
-        Validators.name,
-        Validators.minLength(3),
-        Validators.maxLength(50),
-      ],
-      lastName: [
-        '',
-        Validators.required,
-        Validators.name,
-        Validators.minLength(3),
-        Validators.maxLength(50),
-      ],
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.email,
-          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
-          Validators.minLength(5),
-          Validators.maxLength(254),
-        ],
-      ],
-      title: [
-        '',
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(50),
-      ],
-      phone: [
-        '',
-        Validators.required,
-        Validators.maxLength(10),
-      ],
-      cancelRegistration: [
-        '',
-        Validators.required,
-      ],
-      trainingDate: [
-        '',
-        Validators.required,
-      ],
-      jobFunction: [
-        '',
-        Validators.required,
-      ],
-      dieatryRequirement: [
-        '',
-        Validators.required,
-      ],
-      excepectations:[
-        '',
-        Validators.required
-      ]
+        Validators.email,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+        Validators.minLength(5), 
+        Validators.maxLength(254),
+      ]],
+      title: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]],
+      phone: ['', Validators.required],
+      cancelRegistration: [false],
+      trainingDate: ['', Validators.required],
+      jobFunction: ['', Validators.required],
+      dietaryRequirement: ['', Validators.required],
+      expectations: ['']
     });
   }
 
@@ -95,4 +50,18 @@ export class CompanyRegFormComponent implements OnInit {
   ];
 
   jobFunctions: string[] = ['Campaign Management', 'CRM Adminitration', 'Email Deployment', 'Partner', 'Employee'];
+
+
+  isInvalid(controlName: string): boolean {
+    const control = this.regForm.get(controlName);
+    return !!control && control.invalid && control.touched;
+  }
+
+  onSubmit() : void {
+    if (this.regForm.valid) {
+    } else {
+      this.regForm.markAllAsTouched();
+    }
+  }
+
 }

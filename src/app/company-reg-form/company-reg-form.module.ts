@@ -9,6 +9,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 
@@ -17,7 +19,7 @@ import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [CompanyRegFormComponent],
   imports: [
-    CommonModule,CompanyRegFormRoutingModule,FormsModule,ReactiveFormsModule,MatInputModule,MatFormFieldModule,MatCardModule,MatCheckboxModule,MatSelectModule,MatRadioModule
+    CommonModule,CompanyRegFormRoutingModule,FormsModule,ReactiveFormsModule,MatInputModule,MatFormFieldModule,MatCardModule,MatCheckboxModule,MatSelectModule,MatRadioModule,MatButtonModule
   ]
 })
 export class CompanyRegFormModule { }
